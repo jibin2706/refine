@@ -1,0 +1,57 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "refine",
+  "title": "Refine",
+  "version": "0.0.1",
+  "description": "Improve the grammar of selected text using AI",
+  "icon": "extension-icon.png",
+  "author": "jibin2706",
+  "categories": ["Productivity", "Developer Tools"],
+  "platforms": ["macOS", "Windows"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "refine",
+      "title": "Improve Grammar",
+      "description": "Fix grammar, spelling, and punctuation of the selected text",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "apiKey",
+      "title": "OpenAI API Key",
+      "description": "Your OpenAI API key",
+      "type": "password",
+      "required": true
+    },
+    {
+      "name": "model",
+      "title": "Model",
+      "description": "OpenAI model to use (e.g. gpt-4o-mini, gpt-4o, gpt-4-turbo)",
+      "type": "textfield",
+      "required": false,
+      "default": "gpt-4o-mini"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.8",
+    "openai": "^6.27.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.1.1",
+    "@types/bun": "1.3.9",
+    "@types/react": "19.2.14",
+    "eslint": "^10.0.3",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
